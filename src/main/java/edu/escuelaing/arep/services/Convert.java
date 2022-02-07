@@ -1,5 +1,7 @@
 package edu.escuelaing.arep.services;
 
+import com.google.gson.JsonObject;
+
 public class Convert {
 
     public Convert() {
@@ -15,6 +17,14 @@ public class Convert {
         return fahrenheit;
     }
 
+    public JsonObject celsiusFahrenheitJson(double centigrados) {
+        centigrados = celsiusFahrenheit(centigrados);
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("result", centigrados);
+        return jsonObject;
+    }
+
     /**
      *Convierte de grados fahrenheit a grados celcius
      * @param fahrenheit un numero en grados fahrenheit
@@ -23,5 +33,13 @@ public class Convert {
     public double fahrenheitCelsius(double fahrenheit) {
         double centigrados = (fahrenheit-32)*((double)5/9);
         return centigrados;
+    }
+
+    public JsonObject fahrenheitCelsiusJson(double fahrenheit) {
+        fahrenheit = fahrenheitCelsius(fahrenheit);
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("result", fahrenheit);
+        return jsonObject;
     }
 }
