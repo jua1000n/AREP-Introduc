@@ -1,8 +1,6 @@
 package edu.escuelaing.arep;
 
-import com.google.gson.JsonObject;
 import edu.escuelaing.arep.services.Convert;
-
 import static spark.Spark.*;
 /**
  * Hello world!
@@ -10,7 +8,7 @@ import static spark.Spark.*;
  */
 public class App
 {
-    public static void main( String[] args )
+    public static void main(String[] args)
     {
         Convert convert = new Convert();
         port(getPort());
