@@ -1,5 +1,6 @@
 package edu.escuelaing.arep;
 
+import com.google.gson.JsonObject;
 import edu.escuelaing.arep.services.Convert;
 import static spark.Spark.*;
 /**
@@ -8,6 +9,10 @@ import static spark.Spark.*;
  */
 public class App
 {
+    /**
+     * El metodo main obtiene los valores que se mandan desde el frontend y los retorna en formato JSON
+     * @param args
+     */
     public static void main(String[] args)
     {
         Convert convert = new Convert();
@@ -18,12 +23,12 @@ public class App
                 res.type("application/json");
                 String value = req.queryParams("value");
                 if(value == null) {
-                    return "Error 406: Not acceptable";
+                    return error();
                 } else {
                     try{
                         return convert.fahrenheitCelsiusJson(Double.parseDouble(value));
                     }catch (NumberFormatException e) {
-                        return "Error 406: Not acceptable";
+                        return error();
                     }
                 }
             });
@@ -34,12 +39,12 @@ public class App
                 System.out.println(value);
                 if(value == null) {
 
-                    return "Error 406: Not acceptable";
+                    return error();
                 } else {
                     try{
                         return convert.celsiusFahrenheitJson(Double.parseDouble(value));
                     }catch (NumberFormatException e) {
-                        return "Error 406: Not acceptable";
+                        return error();
                     }
                 }
             });
@@ -48,6 +53,16 @@ public class App
         path("", () ->{
 
         });
+    }
+
+    /**
+     * Manda el error de que los parametros no son correctos en formnato JSON
+     * @return retorna un objeto de tipo JSON
+     */
+    private static JsonObject error() {
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("result", "Error 406: Not acceptable");
+        return jsonObject;
     }
 
     static int getPort() {

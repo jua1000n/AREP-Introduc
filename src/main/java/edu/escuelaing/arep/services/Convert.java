@@ -14,9 +14,14 @@ public class Convert {
      */
     public double celsiusFahrenheit(double centigrados) {
         double fahrenheit = (centigrados*((double) 9/5))+32;
-        return fahrenheit;
+        return Math.round(fahrenheit * 100.0) / 100.0;
     }
 
+    /**
+     * Ingresa un numero en centrigrados y devuleve el resultado en JSON convertido en fahrenheit
+     * @param centigrados
+     * @return retorna un objeto de tipo JSON
+     */
     public JsonObject celsiusFahrenheitJson(double centigrados) {
         centigrados = celsiusFahrenheit(centigrados);
 
@@ -32,9 +37,14 @@ public class Convert {
      */
     public double fahrenheitCelsius(double fahrenheit) {
         double centigrados = (fahrenheit-32)*((double)5/9);
-        return centigrados;
+        return Math.round(centigrados * 100.0) / 100.0;
     }
 
+    /**
+     * Ingresa un numero en fahrenheit y devuleve el resultado en JSON convertido en centigrados
+     * @param fahrenheit
+     * @return retorna un objeto de tipo JSON
+     */
     public JsonObject fahrenheitCelsiusJson(double fahrenheit) {
         fahrenheit = fahrenheitCelsius(fahrenheit);
 
