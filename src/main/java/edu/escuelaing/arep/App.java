@@ -18,6 +18,23 @@ public class App
         Convert convert = new Convert();
         port(getPort());
 
+        options("/*",
+                (request, response) -> {
+                    String accessControlRequestHeaders = request.headers("Access-Control-Request-Headers");
+                    if (accessControlRequestHeaders != null) {
+                        response.header("Access-Control-Allow-Headers", accessControlRequestHeaders);
+                    }
+
+                    String accessControlRequestMethod = request.headers("Access-Control-Request-Method");
+                    if (accessControlRequestMethod != null) {
+                        response.header("Access-Control-Allow-Methods", accessControlRequestMethod);
+                    }
+
+                    return "OK";
+                });
+
+        before((request, response) -> response.header("Access-Control-Allow-Origin", "*"));
+
         path("convert", () ->{
             get("/celsiusF", (req, res) -> {
                 res.type("application/json");
@@ -36,7 +53,6 @@ public class App
             get("/fahrenheitC", (req, res) -> {
                 res.type("application/json");
                 String value = req.queryParams("value");
-                System.out.println(value);
                 if(value == null) {
 
                     return error();
