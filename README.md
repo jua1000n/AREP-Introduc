@@ -43,5 +43,5 @@ Lo que hara es que se descargue todos los recursos necesarios, que compile, y re
 
 > heroku local web
 
-### Author
+## Author
 Juan Sebastian Cadavid
