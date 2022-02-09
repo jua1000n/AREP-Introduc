@@ -2,26 +2,57 @@
 <html lang="en">
 <head>
     <script src="script.js"></script>
+	<style>
+	table{
+			width: 75%;
+			border: 1px solid black;
+		}
+	.button {
+	  display: inline-block;
+	  padding: 13px 23px;
+	  font-size: 22px;
+	  cursor: pointer;
+	  text-align: center;
+	  text-decoration: none;
+	  outline: none;
+	  color: #fff;
+	  background-color: #575359;
+	  border: none;
+	  border-radius: 15px;
+	  box-shadow: 0 9px #999;
+	}
+
+	.button:hover {background-color: #7c7d7c}
+
+	.button:active {
+	  background-color: #7c7d7c;
+	  box-shadow: 0 5px #666;
+	  transform: translateY(4px);
+	}
+	.texto {
+        font-family: Comic Sans MS;
+		color: white
+      }
+	</style>
     <meta charset="UTF-8">
     <title>Conversion °C a °F</title>
 </head>
-<body>
+<body style="background-color: #ebebeb">
 <center>
-    <table>
-        <tr>
-            <td align="center" colspan="2"><h1>Conversion de escalas de temperatura</h1></td>
+    <table style="background-color: #595c5b; margin-top: 150px;" >
+            <td align="center" colspan="2"><h1 class="texto" style="color: white">Conversion de escalas de temperatura</h1></td>
         </tr>
         <tr>
-            <td align="center">De fahrenheit a celsius</td>
-            <td align="center">De celsius a fahrenheit</td>
+            <td align="center" class="texto" ><h3>De fahrenheit a celsius</h3></td>
+            <td align="center" class="texto" style="color: white"><h3>De celsius a fahrenheit</h3></td>
 
         </tr>
         <tr>
-            <td><form method="get" ></form> Fahrenheit: <input type="number" name="numbercel" value="Ingrese el valor a convertir"/></td>
-            <td><form method="get" ></form> Celcius: <input type="number" name="numberfah" value="Ingrese el valor a convertir"/></td>
+            <td align="center"><form method="get" ></form > Fahrenheit: <input  type="number" name="numbercel" value="Ingrese el valor a convertir"/></td>
+            <td align="center"><form method="get" ></form> Celcius: <input type="number" name="numberfah" value="Ingrese el valor a convertir"/></td>
         </tr>
         <tr>
-            <td align="center" colspan="2" ><button onclick="inputValues()">Result</button></td>
+            <td align="center" colspan="2" ><button class="button" onclick="inputValues()">Result</button></td>
         </tr>
     </table>
 </center>
