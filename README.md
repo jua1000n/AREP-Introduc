@@ -1,5 +1,3 @@
-# AREP-Introduc
-
 # Conversor de unidades de temperatura
 Por medio de esta API se plantea hacer la conversion de unidades Celcius a Fahrenheit y viceversa, los recursos que se usaron principalmente fueronSpark, Java, Javascript, HTML.
 
