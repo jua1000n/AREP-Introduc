@@ -14,7 +14,6 @@ function inputValues() {
 
     const url1 = `${url}/celsiusF?value=${numberc}`;
     const url2 = `${url}/fahrenheitC?value=${numberf}`;
-    http://localhost:5000/convert/celsiusF?value=2let res1;
 
     if(numberc != "") {
         getapi(url1, "C");
