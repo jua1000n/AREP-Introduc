@@ -6,8 +6,10 @@
 	table{
 			width: 75%;
 			border: 1px solid black;
+            border-radius: 15px;
 		}
 	.button {
+        font-family: Comic Sans MS;
 	  display: inline-block;
 	  padding: 13px 23px;
 	  font-size: 22px;
@@ -44,17 +46,25 @@
         </tr>
         <tr>
             <td align="center" class="texto" ><h3>De fahrenheit a celsius</h3></td>
-            <td align="center" class="texto" style="color: white"><h3>De celsius a fahrenheit</h3></td>
+            <td align="center" class="texto" ><h3>De celsius a fahrenheit</h3></td>
 
         </tr>
         <tr>
-            <td align="center"><form method="get" ></form > Fahrenheit: <input  type="number" name="numbercel" value="Ingrese el valor a convertir"/></td>
-            <td align="center"><form method="get" ></form> Celcius: <input type="number" name="numberfah" value="Ingrese el valor a convertir"/></td>
+            <td align="center"><form method="get" class="texto">Fahrenheit</form ><input style="border-radius: 15px" type="number" name="numbercel" value="Ingrese el valor a convertir"/></td>
+            <td align="center"><form method="get" class="texto">Celcius:</form><input style="border-radius: 15px" type="number" name="numberfah" value="Ingrese el valor a convertir"/></td>
+        </tr>
+        <tr>
+            <td align="center" colspan="2" ><div id="resultt">
+                <p class="example" style="color: white; font-family: Comic Sans MS"></p>
+            </div></td>
         </tr>
         <tr>
             <td align="center" colspan="2" ><button class="button" onclick="inputValues()">Result</button></td>
         </tr>
     </table>
+    <!--div id="resultt">
+        <p class="example" style="color: white"></p>
+    </div-->
 </center>
 </body>
 </html>
