@@ -1,9 +1,12 @@
 package edu.escuelaing.arep;
 
+import edu.escuelaing.arep.concurrency.VerifyConcurrencyConect;
 import edu.escuelaing.arep.services.Convert;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+
+import java.io.IOException;
 
 /**
  * Unit test for simple App.
